@@ -78,7 +78,11 @@
         <!--PageVC-->
         <scene sceneID="6Hy-mJ-lcY">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="n6g-jS-duT" customClass="PageVC" customModule="Weather_Gift" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="n6g-jS-duT" customClass="PageVC" customModule="Weather_Gift" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="efe-Sd-f0m" kind="presentation" identifier="ToListVC" id="QOl-Zq-z2I"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciG-cr-nDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137" y="-568"/>
@@ -122,6 +126,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="1Tl-Ai-9jM" id="P06-El-kng"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvA-fl-eNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
