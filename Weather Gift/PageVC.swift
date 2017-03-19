@@ -70,6 +70,12 @@ class PageVC: UIPageViewController {
         }
     }
     
+    @IBAction func unwindFromListVC(sender: UIStoryboardSegue) {
+        pageControl.numberOfPages = locationsArray.count
+        pageControl.currentPage = currentPage
+        setViewControllers([createDetailVC(forPage: currentPage)], direction: .forward, animated: false, completion: nil)
+    }
+    
     //MARK: - Create View Controller for UIPageViewController
 
     func createDetailVC(forPage page: Int) -> DetailVC {
