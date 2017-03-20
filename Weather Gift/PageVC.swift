@@ -67,6 +67,7 @@ class PageVC: UIPageViewController {
             let controller = segue.destination as! ListVC
             controller.locationsArray = locationsArray
             controller.currentPage = currentPage
+            print(locationsArray)
         }
     }
     
@@ -74,6 +75,7 @@ class PageVC: UIPageViewController {
         pageControl.numberOfPages = locationsArray.count
         pageControl.currentPage = currentPage
         setViewControllers([createDetailVC(forPage: currentPage)], direction: .forward, animated: false, completion: nil)
+        print(locationsArray)
     }
     
     //MARK: - Create View Controller for UIPageViewController

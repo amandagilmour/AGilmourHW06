@@ -112,7 +112,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="8g1-vY-vdq" kind="unwind" identifier="ToPageVC " unwindAction="unwindFromListVCWithSender:" id="fnR-0l-5J7"/>
+                                            <segue destination="8g1-vY-vdq" kind="unwind" identifier="ToPageVC" unwindAction="unwindFromListVCWithSender:" id="fnR-0l-5J7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

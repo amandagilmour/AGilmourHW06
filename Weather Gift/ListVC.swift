@@ -34,6 +34,7 @@ class ListVC: UIViewController {
             let controller = segue.destination as! PageVC
             controller.currentPage = currentPage
             controller.locationsArray = locationsArray
+            print("Error")
         }
     }
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
@@ -67,6 +68,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             locationsArray.remove(at: indexPath.row)
+            print(locationsArray)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
