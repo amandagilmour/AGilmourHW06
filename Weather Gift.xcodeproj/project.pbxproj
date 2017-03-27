@@ -16,6 +16,7 @@
 		5F06FBA71E78981E005804EC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06FBA61E78981E005804EC /* DetailVC.swift */; };
 		5F06FBA91E78C685005804EC /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06FBA81E78C685005804EC /* ListVC.swift */; };
 		5F06FBAB1E78CAF2005804EC /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06FBAA1E78CAF2005804EC /* PageVC.swift */; };
+		5FA916A31E89707300E92CCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA916A21E89707300E92CCB /* Constants.swift */; };
 		5FCC20F61E881B88005E62AA /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC20F51E881B88005E62AA /* WeatherLocation.swift */; };
 		9D7C1BBAC0692C7607F6EE1D /* Pods_Weather_GiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796D21E0EF17822494175E77 /* Pods_Weather_GiftUITests.framework */; };
 		CEF32807DBDE609187967923 /* Pods_Weather_Gift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FC3FEF4A09BB61851DFD19 /* Pods_Weather_Gift.framework */; };
@@ -59,6 +60,7 @@
 		5F06FBA61E78981E005804EC /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		5F06FBA81E78C685005804EC /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		5F06FBAA1E78CAF2005804EC /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		5FA916A21E89707300E92CCB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5FCC20F51E881B88005E62AA /* WeatherLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 		73059EE72C6C6DFB93080FAB /* Pods_Weather_GiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_GiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		796D21E0EF17822494175E77 /* Pods_Weather_GiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_GiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 				5FCC20F51E881B88005E62AA /* WeatherLocation.swift */,
 				5F06FBAA1E78CAF2005804EC /* PageVC.swift */,
 				5F06FBA61E78981E005804EC /* DetailVC.swift */,
+				5FA916A21E89707300E92CCB /* Constants.swift */,
 				5F06FBA81E78C685005804EC /* ListVC.swift */,
 				5F06FB7C1E78961F005804EC /* Main.storyboard */,
 				5F06FB7F1E78961F005804EC /* Assets.xcassets */,
@@ -461,6 +464,7 @@
 				5F06FBAB1E78CAF2005804EC /* PageVC.swift in Sources */,
 				5F06FB791E78961F005804EC /* AppDelegate.swift in Sources */,
 				5F06FBA71E78981E005804EC /* DetailVC.swift in Sources */,
+				5FA916A31E89707300E92CCB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

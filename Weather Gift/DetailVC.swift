@@ -28,12 +28,18 @@ class DetailVC: UIViewController {
         if currentPage == 0 {
             getLocation()
         }
-        updateUserInterface()
+        locationsArray[currentPage].getWeather {
+            self.updateUserInterface()
+        }
+        
     }
     
     func updateUserInterface() {
         locationLabel.text = locationsArray[currentPage].name
         dateLabel.text = locationsArray[currentPage].coordinates
+        let curTemperature = String(format: "%3.f", locationsArray[currentPage].currentTemp) + "°"
+        temperatureLabel.text = curTemperature
+        print("%%% curTemperature inside updateUserInterface = \(curTemperature)")
     }
     
 }
@@ -87,7 +93,9 @@ extension DetailVC: CLLocationManagerDelegate {
             print(place)
             self.locationsArray[0].name = place
             self.locationsArray[0].coordinates = currentLat + "," + currentLong
-            self.updateUserInterface()
+            self.locationsArray[0].getWeather {
+                self.updateUserInterface()
+            }
         })
         }
         locationManager.stopUpdatingLocation()
