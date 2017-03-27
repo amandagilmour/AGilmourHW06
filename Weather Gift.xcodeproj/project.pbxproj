@@ -16,6 +16,7 @@
 		5F06FBA71E78981E005804EC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06FBA61E78981E005804EC /* DetailVC.swift */; };
 		5F06FBA91E78C685005804EC /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06FBA81E78C685005804EC /* ListVC.swift */; };
 		5F06FBAB1E78CAF2005804EC /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06FBAA1E78CAF2005804EC /* PageVC.swift */; };
+		5FCC20F61E881B88005E62AA /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCC20F51E881B88005E62AA /* WeatherLocation.swift */; };
 		9D7C1BBAC0692C7607F6EE1D /* Pods_Weather_GiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796D21E0EF17822494175E77 /* Pods_Weather_GiftUITests.framework */; };
 		CEF32807DBDE609187967923 /* Pods_Weather_Gift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FC3FEF4A09BB61851DFD19 /* Pods_Weather_Gift.framework */; };
 		D360E43DECDF7E619A0F37EE /* Pods_Weather_GiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73059EE72C6C6DFB93080FAB /* Pods_Weather_GiftTests.framework */; };
@@ -58,6 +59,7 @@
 		5F06FBA61E78981E005804EC /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		5F06FBA81E78C685005804EC /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		5F06FBAA1E78CAF2005804EC /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		5FCC20F51E881B88005E62AA /* WeatherLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 		73059EE72C6C6DFB93080FAB /* Pods_Weather_GiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_GiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		796D21E0EF17822494175E77 /* Pods_Weather_GiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_GiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8CFF76AE19659708A826E0 /* Pods-Weather GiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather GiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather GiftTests/Pods-Weather GiftTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				5F06FB781E78961F005804EC /* AppDelegate.swift */,
+				5FCC20F51E881B88005E62AA /* WeatherLocation.swift */,
 				5F06FBAA1E78CAF2005804EC /* PageVC.swift */,
 				5F06FBA61E78981E005804EC /* DetailVC.swift */,
 				5F06FBA81E78C685005804EC /* ListVC.swift */,
@@ -453,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FCC20F61E881B88005E62AA /* WeatherLocation.swift in Sources */,
 				5F06FBA91E78C685005804EC /* ListVC.swift in Sources */,
 				5F06FBAB1E78CAF2005804EC /* PageVC.swift in Sources */,
 				5F06FB791E78961F005804EC /* AppDelegate.swift in Sources */,
@@ -709,6 +713,7 @@
 				5F06FB9F1E78961F005804EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F06FBA01E78961F005804EC /* Build configuration list for PBXNativeTarget "Weather GiftTests" */ = {
 			isa = XCConfigurationList;
@@ -717,6 +722,7 @@
 				5F06FBA21E78961F005804EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F06FBA31E78961F005804EC /* Build configuration list for PBXNativeTarget "Weather GiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -725,6 +731,7 @@
 				5F06FBA51E78961F005804EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
