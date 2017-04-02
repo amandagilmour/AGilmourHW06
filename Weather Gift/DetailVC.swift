@@ -16,6 +16,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var currentImage: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     var currentPage = 0
     var locationsArray = [WeatherLocation]()
@@ -24,6 +25,8 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self 
         locationManager.delegate = self
         if currentPage == 0 {
             getLocation()
@@ -42,13 +45,24 @@ class DetailVC: UIViewController {
         locationLabel.isHidden = isHidden
         
         locationLabel.text = locationsArray[currentPage].name
-        dateLabel.text = locationsArray[currentPage].coordinates
+        dateLabel.text = formatTimeForTimeZone(unixDateToFormat: locationsArray[currentPage].currentTime, timeZoneString: locationsArray[currentPage].timeZone)
+        // dateLabel.text = locationsArray[currentPage].coordinates
         let curTemperature = String(format: "%3.f", locationsArray[currentPage].currentTemp) + "°"
         temperatureLabel.text = curTemperature
         print("%%% curTemperature inside updateUserInterface = \(curTemperature)")
         summaryLabel.text = locationsArray[currentPage].dailySummary
+        currentImage.image = UIImage(named: locationsArray[currentPage].currentIcon)
     }
     
+    func formatTimeForTimeZone(unixDateToFormat: TimeInterval, timeZoneString: String) -> String {
+        let usableDate = Date(timeIntervalSince1970: unixDateToFormat)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMM dd, y"
+        dateFormatter.timeZone = TimeZone(identifier: timeZoneString)
+        let dateString = dateFormatter.string(from: usableDate)
+        
+        return dateString
+    }
 }
 
 extension DetailVC: CLLocationManagerDelegate {
@@ -111,4 +125,18 @@ extension DetailVC: CLLocationManagerDelegate {
         print("Error getting location. Error code: \(error)")
     }
         
+}
+
+extension DetailVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DayWeatherCell")
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 }
