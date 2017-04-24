@@ -57,6 +57,12 @@ class ListVC: UIViewController {
         present(autocompleteController, animated: true, completion: nil)
     }
 
+    func saveUserDefaults() {
+        var locationsDefaultsArray = [WeatherUserDefault]()
+        locationsDefaultsArray = locationsArray
+        let locationsData = NSKeyedArchiver.archivedData(withRootObject: locationsDefaultsArray)
+        UserDefaults.standard.set(locationsData, forKey: "locationsData")
+    }
 }
 extension ListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,15 +84,19 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
             locationsArray.remove(at: indexPath.row)
             print(locationsArray)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            saveUserDefaults()
         }
     }
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // First make a copy of the item that you are going to move.
         let itemToMove = locationsArray[sourceIndexPath.row]
+        
         // Delete item from the original location (pre-move)
         locationsArray.remove(at: sourceIndexPath.row)
+        
         //Insert item into the "to", post-move, location
         locationsArray.insert(itemToMove, at: destinationIndexPath.row)
+        saveUserDefaults()
     }
     // MARK: - TableView code to freeze the first cell. No deleting or moving.
     
@@ -107,7 +117,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func updateTable(placeName: GMSPlace) {
-        var newLocation = WeatherLocation()
+        let newLocation = WeatherLocation()
         newLocation.name = placeName.name
         let lat = placeName.coordinate.latitude
         let long = placeName.coordinate.longitude
@@ -115,6 +125,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         print(newLocation.coordinates)
         locationsArray.append(newLocation)
         tableView.reloadData()
+        saveUserDefaults()
     }
     
 }

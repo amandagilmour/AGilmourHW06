@@ -22,9 +22,24 @@ class PageVC: UIPageViewController {
         delegate = self
         dataSource = self
         
+        // Load any saved location data from UserDefaults
+        if let locationsDefaultsData = UserDefaults.standard.object(forKey: "locationsData") as? Data {
+            if let locationsDefaultsArray = NSKeyedUnarchiver.unarchiveObject(with: locationsDefaultsData) as? [WeatherUserDefault] {
+                locationsArray = locationsDefaultsArray as! [WeatherLocation]
+            } else {
+                print("error creating array")
+            }
+        } else {
+            print("error loading data")
+        }
+        
         var newLocation = WeatherLocation()
         newLocation.name = "Unknown Weather Location"
+        if locationsArray.count == 0 {
         locationsArray.append(newLocation)
+        } else {
+            locationsArray[0] = newLocation
+        }
         
         setViewControllers([createDetailVC(forPage: 0)], direction: .forward, animated: false, completion: nil)
         
