@@ -45,8 +45,9 @@ class PageVC: UIPageViewController {
         
         setViewControllers([createDetailVC(forPage: 0)], direction: .forward, animated: false, completion: nil)
         
-        configurePageControl()
         configureButtons2()
+        configurePageControl()
+        
     }
 
     // MARK: - UI Configuration Method
