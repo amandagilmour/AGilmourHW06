@@ -32,13 +32,18 @@ class DetailVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         locationManager.delegate = self
-        if currentPage == 0 {
-            getLocation()
-        }
+        
         locationsArray[currentPage].getWeather {
             self.updateUserInterface()
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if currentPage == 0 {
+            getLocation()
+        }
     }
     
     func updateUserInterface() {
@@ -90,7 +95,9 @@ extension DetailVC: CLLocationManagerDelegate {
         case .authorizedWhenInUse, .authorizedAlways:
             locationManager.startUpdatingLocation()
         case .denied:
+            if currentPage == 0 && self.view.window != nil {
             showAlert(title: "User has not authorized location services", message: "Open the Settings app > Privacy > Location Services > WeatherGift to enable location services in this app.")
+            }
         case .restricted:
             showAlert(title: "Location Services Denied", message: "It may be that parental controls are restricting location use in this app.")
         }
@@ -109,7 +116,7 @@ extension DetailVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if currentPage == 0 {
+        if currentPage == 0 && self.view.window != nil {
         let geoCoder = CLGeocoder()
         
         currentLocation = locations.last
